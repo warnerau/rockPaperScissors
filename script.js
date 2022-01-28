@@ -1,13 +1,12 @@
 function computerPlay() {
     const choices = ['rock', 'paper', 'scissors'];
-    computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log(`Computer choice: ${computerChoice}`);
-    return computerChoice;
+    computerSelection = choices[Math.floor(Math.random() * choices.length)];
+    console.log(`Computer choice: ${computerSelection}`);
+    return computerSelection;
 }
 
 function playRound(playerSelection, computerSelection) {
     message = '';
-    //Scenarios where player plays rock
     if(playerSelection === 'rock') {
         if(computerSelection === 'paper') {
             message = 'You lose! Paper beats rock!';
@@ -38,3 +37,9 @@ function playRound(playerSelection, computerSelection) {
 
     return message;
 }
+
+let playerSelection = prompt('Play rock, paper, or scissors?').toLowerCase();
+console.log(`Player choice: ${playerSelection}`);
+let computerChoice = computerPlay();
+
+console.log(playRound(playerSelection, computerSelection));
